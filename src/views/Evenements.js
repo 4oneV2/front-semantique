@@ -59,7 +59,7 @@ const evenements = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/evenement')
+      .get('http://localhost:8084/participation')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -73,7 +73,7 @@ const evenements = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -90,7 +90,7 @@ const evenements = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationeventvillepays')
+      .get('http://localhost:8084/clipart')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -103,7 +103,7 @@ const evenements = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -186,7 +186,7 @@ const evenements = () => {
           <Col xs={12}>
             <Card className="card-plain">
               <CardHeader>
-                <CardTitle tag="h4">relation event ville pays </CardTitle>
+                <CardTitle tag="h4">Clients qui ont participer </CardTitle>
                 <p className="category">
                   {' '}
                   Relations : DataProperty et ObjectProperty

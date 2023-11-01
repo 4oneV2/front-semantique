@@ -59,7 +59,7 @@ const Icons = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/arbitre')
+      .get('http://localhost:8084/avis')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -73,7 +73,7 @@ const Icons = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -90,7 +90,7 @@ const Icons = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationarbitrematch')
+      .get('http://localhost:8084/inter')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -103,7 +103,7 @@ const Icons = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -187,7 +187,7 @@ const Icons = () => {
             <Card className="card-plain">
               <CardHeader>
                 <CardTitle tag="h4" style={{ color: 'blue' }}>
-                  relation arbitre match
+              
                 </CardTitle>
               </CardHeader>
               <CardBody>

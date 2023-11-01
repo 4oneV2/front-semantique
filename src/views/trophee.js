@@ -42,7 +42,7 @@ const trophee = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/trophee')
+      .get('http://localhost:8084/modep')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -56,7 +56,7 @@ const trophee = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -73,7 +73,7 @@ const trophee = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationteamtrophee')
+      .get('http://localhost:8084/payer')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -86,7 +86,7 @@ const trophee = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -169,7 +169,7 @@ const trophee = () => {
           <Col xs={12}>
             <Card className="card-plain">
               <CardHeader>
-                <CardTitle tag="h4">relation team trophee</CardTitle>
+                <CardTitle tag="h4">mode de paiement pour chaque client</CardTitle>
                 <p className="category">
                   {' '}
                   Relations : DataProperty et ObjectProperty

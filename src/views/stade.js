@@ -59,7 +59,7 @@ const stade = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/stade')
+      .get('http://localhost:8084/user')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -73,7 +73,7 @@ const stade = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -90,7 +90,7 @@ const stade = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationstadevillematch')
+      .get('http://localhost:8084/gerer')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -103,7 +103,7 @@ const stade = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -127,7 +127,7 @@ const stade = () => {
             <Card>
               <CardHeader>
                 <CardTitle tag="h4" style={{ color: 'blue' }}>
-                  Livraison
+                  Users
                 </CardTitle>
                 {/* searchInput form */}
                 <form>
@@ -186,7 +186,7 @@ const stade = () => {
           <Col xs={12}>
             <Card className="card-plain">
               <CardHeader>
-                <CardTitle tag="h4">relation stade ville match</CardTitle>
+                <CardTitle tag="h4">Gestion des utilisateurs</CardTitle>
                 <p className="category">
                   {' '}
                   Relations : DataProperty et ObjectProperty

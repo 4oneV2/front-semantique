@@ -58,7 +58,7 @@ const pays = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/pays')
+      .get('http://localhost:8084/commande')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -72,7 +72,7 @@ const pays = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -89,7 +89,7 @@ const pays = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationpayssport')
+      .get('http://localhost:8084/com')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -102,7 +102,7 @@ const pays = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -185,7 +185,7 @@ const pays = () => {
           <Col xs={12}>
             <Card className="card-plain">
               <CardHeader>
-                <CardTitle tag="h4">relation pays sport</CardTitle>
+                <CardTitle tag="h4">Commandes et ses etats</CardTitle>
                 <p className="category">
                   {' '}
                   Relations : DataProperty et ObjectProperty

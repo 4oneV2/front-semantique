@@ -59,7 +59,7 @@ const RegularTables = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/supporteur')
+      .get('http://localhost:8084/conversation')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -73,7 +73,7 @@ const RegularTables = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -90,7 +90,7 @@ const RegularTables = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationjoueursuppouteur')
+      .get('http://localhost:8084/acvon')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -103,7 +103,7 @@ const RegularTables = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -127,7 +127,7 @@ const RegularTables = () => {
             <Card>
               <CardHeader>
                 <CardTitle tag="h4" style={{ color: 'blue' }}>
-                  Livraison
+                  Conversation
                 </CardTitle>
                 {/* searchInput form */}
                 <form>
@@ -187,7 +187,7 @@ const RegularTables = () => {
             <Card className="card-plain">
               <CardHeader>
                 <CardTitle tag="h4" style={{ color: 'blue' }}>
-                  relation joueur supporteur
+                  Les conversations des utilisateurs
                 </CardTitle>
               </CardHeader>
               <CardBody>

@@ -59,7 +59,7 @@ const sport = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/sport')
+      .get('http://localhost:8084/requete')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -73,7 +73,7 @@ const sport = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -90,7 +90,7 @@ const sport = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationsportpays')
+      .get('http://localhost:8084/rep')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -103,7 +103,7 @@ const sport = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -186,7 +186,7 @@ const sport = () => {
           <Col xs={12}>
             <Card className="card-plain">
               <CardHeader>
-                <CardTitle tag="h4">relation sport pays</CardTitle>
+                <CardTitle tag="h4">Les requetes qui les artistes ont récus</CardTitle>
                 <p className="category">
                   {' '}
                   Relations : DataProperty et ObjectProperty

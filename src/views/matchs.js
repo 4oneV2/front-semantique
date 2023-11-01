@@ -58,7 +58,7 @@ const Matchs = () => {
   useEffect(() => {
     // Fetch data for the "trophee" table
     axios
-      .get('http://localhost:8099/match')
+      .get('http://localhost:8084/produit')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -72,7 +72,7 @@ const Matchs = () => {
             data: Object.values(val)
               .map((property) => {
                 return property.value.replace(
-                  'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                  "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                   ''
                 );
               })
@@ -89,7 +89,7 @@ const Matchs = () => {
 
     // Fetch data for the "relationteamtrophee" table
     axios
-      .get('http://localhost:8099/relationmatchequipeeventstade')
+      .get('http://localhost:8084/paniprod')
       .then((res) => {
         const value = res.data.results.bindings;
 
@@ -102,7 +102,7 @@ const Matchs = () => {
             className: '',
             data: Object.values(val).map((property) => {
               return property.value.replace(
-                'http://www.semanticweb.org/lenovo/ontologies/2023/9/untitled-ontology-2#',
+                "http://www.semanticweb.org/nour/ontologies/2023/9/untitled-ontology-13#",
                 ''
               );
             }),
@@ -185,7 +185,7 @@ const Matchs = () => {
             <Card className="card-plain">
               <CardHeader>
                 <CardTitle tag="h4">
-                  relation match equipe event stade
+                Les Produits dont ses paniers
                 </CardTitle>
                 <p className="category">
                   {' '}
